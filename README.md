@@ -4,19 +4,21 @@
 
 ### Dependencies
 
-To build object-ref-trace, you need the following dependencies installed:
+To build JLITE, you need the following dependencies installed:
 
 - CMake >= 3.0
 - GCC >= 9.0
+- JDK 8
 
 ### Build & Install
 
 ```
 cd jlite
+export JAVA_HOME=<JAVA_HOME_FOR_JDK8>
 ./build.sh
 ```
 
-Load the environment to use the installed object-ref-trace:
+Load the environment to use the installed JLITE:
 
 ```
 cd jlite
@@ -55,7 +57,7 @@ java/lang/String
 
 Only bootstrap mode can trace some java standard library. 
 
-Add java argument `-Xbootclasspath/a:/path/to/object-ref-trace/agent-jar-with-dependencies.jar` and you can enable bootstrap mode.
+Add java argument `-Xbootclasspath/a:/path/to/JLITE/agent-jar-with-dependencies.jar` and you can enable bootstrap mode.
 
 After running of JLITE, a directory named `data-<pid>` is generated.
 
