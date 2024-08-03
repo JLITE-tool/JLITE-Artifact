@@ -100,6 +100,8 @@ python3 <analysis.py>
 
 This analysis can be done at reference mode, and data process of soa is not compatible with rso and roa.
 
+**After addr2id, the original trace is modified and can not be used to run rso or roa.**
+
 Usage:
 
 ```
