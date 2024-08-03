@@ -112,6 +112,7 @@ python3 <analysis.py>
 
 ### Requirements
 
+- Jdk 8
 - Jdk 11
 - python3 
   - numpy
@@ -132,6 +133,8 @@ cd benchmarks
 ### Run of Benchmarks
 
 ```
+export JAVA8_HOME=<JAVA_HOME_OF_JDK8>
+export JAVA11_HOME=<JAVA_HOME_OF_JDK11>
 cd <root-of-project>
 . env.sh
 cd benchmarks
