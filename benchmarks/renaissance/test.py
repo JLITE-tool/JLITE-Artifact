@@ -1,12 +1,13 @@
 import os
 import subprocess
 from timeit import default_timer as timer
+import sys
 jar_name = 'renaissance.jar'
 with open('tasks.txt') as f:
     testcases = f.readlines()
     testcases = [x.strip() for x in testcases]
 # testcases = testcases[1:]
-
+times_to_run = int(sys.argv[1])
 def run(cmd, *args, **kwargs):
     return subprocess.run([cmd], *args, **kwargs, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 # testcases = []
@@ -43,7 +44,7 @@ with open("err.log", "a") as f:
             else:
                 run(f'cp {env["JLITE_PROJECT_ROOT"]}/benchmarks/candidates/renaissance/{case}-candidate.txt candidate.txt')
 
-            for i in range(30):
+            for i in range(times_to_run):
                 time_mark = timer()
                 subprocess.run([f"rm -rf data-*"], shell=True)
                 print(f"[{timer()}] run java", flush=True)

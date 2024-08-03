@@ -112,6 +112,8 @@ python3 <analysis.py>
 
 ## Overhead Evaluation
 
+It may take long time to run overhead evaluation.
+
 ### Requirements
 
 - Jdk 8
@@ -140,7 +142,7 @@ export JAVA11_HOME=<JAVA_HOME_OF_JDK11>
 cd <root-of-project>
 . env.sh
 cd benchmarks
-./run.sh
+./run.sh <times-to-run>
 ```
 
 ### Process of Log File

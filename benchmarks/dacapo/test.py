@@ -1,7 +1,8 @@
 import os
 import subprocess
 from timeit import default_timer as timer
-
+import sys
+times_to_run = int(sys.argv[1])
 
 cases = [
 "avrora",
@@ -71,7 +72,7 @@ with open("err.log", "a") as f:
                 run(f'cp candidate.txt {case[0]}-candidate.txt')
             else:
                 run(f'cp {env["JLITE_PROJECT_ROOT"]}/benchmarks/candidates/dacapo/{case[0]}-candidate.txt candidate.txt')
-            for i in range(30):
+            for i in range(times_to_run):
                 time_mark = timer()
                 subprocess.run([f"rm -rf data-*"], shell=True)
                 print(f"[{timer()}] run java", flush=True)
